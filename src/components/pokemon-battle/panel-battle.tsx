@@ -23,7 +23,7 @@ export const PanelBattle = ({
   } = usePanelBattle();
   if (isPending) return "Loading...";
 
-  if (error || currentPokemon === null) return "An error has occurred ";
+  if (error || currentPokemon === null) return "An error has occurred";
 
   
 
