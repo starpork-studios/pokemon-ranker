@@ -98,6 +98,7 @@ export const usePanelBattle = () => {
   const allFinished = results.every((res) => res.isSuccess);
 
   useEffect(() => {
+    
     if (allFinished) {
       const queue = results.map((res) => getPokemonCardData(res.data));
       setPokemonQueue(queue);
