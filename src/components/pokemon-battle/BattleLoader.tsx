@@ -1,8 +1,7 @@
-import { Pokemon } from "../list/types";
-import { PokemonCardData } from "./usePanelBattle";
 import { createClient } from "@libsql/client";
 import { PanelBattleWrapper } from "./battle-provider-wrapper";
 import { calcNewElos } from "@/eloFormula";
+import { Pokemon, PokemonCardData } from "../type";
 
 const client = createClient({
   url: process.env.TURSO_URL!,

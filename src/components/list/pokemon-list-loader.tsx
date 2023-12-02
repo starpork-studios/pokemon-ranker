@@ -1,7 +1,7 @@
 
 import { createClient } from "@libsql/client";
 import { PokemonList } from "./pokemon-list";
-import { Pokemon } from "./types";
+import { Pokemon } from "../type";
 
 const client = createClient({
   url: process.env.TURSO_URL!,

@@ -6,9 +6,8 @@ import {
   QueryClientProvider,
   useQueries,
 } from "@tanstack/react-query";
-import { Pokemon } from "../list/types";
-import { PokemonCardData, usePanelBattle } from "./usePanelBattle";
 import { PanelBattle } from "./panel-battle";
+import { Pokemon, PokemonCardData } from "../type";
 const queryClient = new QueryClient();
 
 export const PanelBattleWrapper = ({

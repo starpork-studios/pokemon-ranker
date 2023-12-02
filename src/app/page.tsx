@@ -1,13 +1,14 @@
 import { BattleLoader } from "@/components/pokemon-battle/BattleLoader";
-import { UserButton, useUser, } from "@clerk/nextjs";
-
+import { UserButton, useUser } from "@clerk/nextjs";
 
 export default async function Home() {
   //const { isSignedIn, user, isLoaded } = useUser();
 
   return (
-    <main className="mx-auto max-w-6xl mt-5">
-      <UserButton />
+    <main className="mx-auto max-w-6xl mt-5 h-[calc(100vh-1.25rem)]">
+      <div className=" fixed ">
+        <UserButton />
+      </div>
       <BattleLoader />
     </main>
   );
