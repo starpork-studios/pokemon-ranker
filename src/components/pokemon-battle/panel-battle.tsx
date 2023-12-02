@@ -1,10 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
-
-import { useQueries } from "@tanstack/react-query";
-import { Pokemon } from "../list/types";
-import { PokemonCardData, usePanelBattle } from "./usePanelBattle";
+import React from "react";
+import { usePanelBattle } from "./usePanelBattle";
 import { PokemonCard } from "./pokemon-card";
+import { Pokemon, PokemonCardData } from "../type";
 
 const POKE_DEX_MAX_ID = 151;
 const INITIAL_LOAD_MAX = 10;
@@ -28,7 +26,7 @@ export const PanelBattle = ({
   
 
   return (
-    <div>
+    <div className="flex flex-row w-full h-full items-center justify-center" >
       <PokemonCard
         pokemonData={currentPokemon.a}
         opponent={currentPokemon.b}

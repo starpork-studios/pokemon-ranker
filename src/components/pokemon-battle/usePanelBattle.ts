@@ -1,38 +1,9 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { Pokemon } from "../list/types";
+import { useEffect, useState } from "react";
 import { useQueries, useQuery } from "@tanstack/react-query";
+import { PokemonCardData } from "../type";
 
 const POKE_DEX_MAX_ID = 151;
 const INITIAL_LOAD_MAX = 10;
-
-type PokemonType =
-  | "normal"
-  | "fighting"
-  | "flying"
-  | "poison"
-  | "ground"
-  | "rock"
-  | "bug"
-  | "ghost"
-  | "steel"
-  | "fire"
-  | "water"
-  | "grass"
-  | "electric"
-  | "psychic"
-  | "ice"
-  | "dragon"
-  | "dark"
-  | "fairy"
-  | "unknown"
-  | "shadow";
-
-export type PokemonCardData = {
-  name: string;
-  dexId: number;
-  imageUrl: string;
-  types: PokemonType[];
-};
 
 const randomPokeDexId = () => {
   return Math.floor(Math.random() * POKE_DEX_MAX_ID) + 1;
@@ -98,7 +69,6 @@ export const usePanelBattle = () => {
   const allFinished = results.every((res) => res.isSuccess);
 
   useEffect(() => {
-    
     if (allFinished) {
       const queue = results.map((res) => getPokemonCardData(res.data));
       setPokemonQueue(queue);
@@ -125,8 +95,8 @@ export const usePanelBattle = () => {
     }
   };
   useEffect(() => {
-    fetchNextPokemon()
-  },[nextId])
+    fetchNextPokemon();
+  }, [nextId]);
 
   const isPending = results.some((res) => res.isPending);
   const error = results.some((res) => res.error);
