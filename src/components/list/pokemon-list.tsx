@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Pokemon } from "./types";
+import { Pokemon } from "../type";
 
 export function PokemonList({
   rows,
