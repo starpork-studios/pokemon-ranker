@@ -3,7 +3,7 @@ import { useQueries, useQuery } from "@tanstack/react-query";
 import { PokemonCardData } from "../type";
 
 const POKE_DEX_MAX_ID = 151;
-const INITIAL_LOAD_MAX = 10;
+const INITIAL_LOAD_MAX = 30;
 
 const randomPokeDexId = () => {
   return Math.floor(Math.random() * POKE_DEX_MAX_ID) + 1;
@@ -95,7 +95,7 @@ export const usePanelBattle = () => {
     }
   };
   useEffect(() => {
-    fetchNextPokemon();
+    if (pokemonQueue.length < POKE_DEX_MAX_ID) fetchNextPokemon();
   }, [nextId]);
 
   const isPending = results.some((res) => res.isPending);
